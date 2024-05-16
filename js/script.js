@@ -3,15 +3,15 @@
 // Created by: May  2024
 // This file contains the JS functions for index.html
 
-function myButtonClicked() {
-  positiveChecked = document.getElementById('positive-number').checked
-  negativeChecked = document.getElementById('negative-number').checked
+"use strict"
 
-const randomNumber = Math.floor(Math.random() * 99) + 1
+let clicks = localStorage.getElementById("click-count") || 0
 
-  if (positiveChecked == true) {
-    document.getElementById("number-answer").innerHTML = randomNumber
-  } else {
-    document.getElementById("number-answer").innerHTML = (randomNumber * -1)
-  }
+  function myButtonClicked () {
+    clicks += 1
+
+  document.getElementById("click-count").innerHTML = clicks
+
+  localStorage.setItem("click-counter", clicks)
 }
+
