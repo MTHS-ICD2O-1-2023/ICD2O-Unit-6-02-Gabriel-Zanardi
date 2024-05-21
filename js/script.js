@@ -3,15 +3,21 @@
 // Created by: May  2024
 // This file contains the JS functions for index.html
 
-"use strict"
+    "use strict"
 
-let clicks = localStorage.getElementById("click-count") || 0
+    let clicks = parseInt(localStorage.getItem("click-counter")) || 0
 
-  function myButtonClicked () {
-    clicks += 1
+    function updateCookieCount() {
 
-  document.getElementById("click-count").innerHTML = clicks
+        document.getElementById("click-count").innerHTML = clicks
+    }
 
-  localStorage.setItem("click-counter", clicks)
-}
+    function myButtonClicked() {
+        clicks += 1
+        
+        // Update the HTML element with the updated clicks value
+        document.getElementById("click-count").innerHTML = clicks
 
+        // Update the clicks value in local storage
+        localStorage.setItem("click-counter", clicks)
+    }
