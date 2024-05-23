@@ -21,4 +21,3 @@
     // Update the clicks value in local storage
     localStorage.setItem("click-counter", clicks)
   }
-  
